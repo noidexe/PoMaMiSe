@@ -35,24 +35,24 @@ exit
 :running
 echo.
 echo.======================================
-echo.RECORDA QUE PARA CERRAR EL SERVER SE
-echo.USA EL COMMANDO 'stop'. NO CERRAR CON
-echo.alt-f4 O CERRANDO LA VENTANA
+echo.REMEMBER TO USE THE 'stop' COMMAND TO
+echo.SHUT DOWN THE SERVER. NEVER DO IT BY
+echo.PRESSING ALT-F4 OR CLOSING THE WINDOW
 echo.======================================
 PAUSE
 if not exist XXX-SERVER-ONLINE-XXX.txt (
 	echo.### > XXX-SERVER-ONLINE-XXX.txt
 	echo.### >> XXX-SERVER-ONLINE-XXX.txt
-	echo.[%date% %time%]EL SERVER ESTA SIENDO EJECUTADO EL POR  %computername%\%username%, NO EJECUTAR!!! >> XXX-SERVER-ONLINE-XXX.txt
+	echo.[%date% %time%]THE SERVER IS BEING RUN BY %computername%\%username%, DO NOT RUN!!! >> XXX-SERVER-ONLINE-XXX.txt
 	echo.### >> XXX-SERVER-ONLINE-XXX.txt
 	echo.### >> XXX-SERVER-ONLINE-XXX.txt
-	echo.Si estas completamente seguro/a de que nadie esta ejecutando el server, >> XXX-SERVER-ONLINE-XXX.txt
-	echo.elimina el archivo Dropbox/MCserver/server/XXX-SERVER-ONLINE-XXX.txt y proba de nuevo >> XXX-SERVER-ONLINE-XXX.txt
+	echo.If youre completely sure nobody is running the server, >> XXX-SERVER-ONLINE-XXX.txt
+	echo.please delete Dropbox/MCserver/server/XXX-SERVER-ONLINE-XXX.txt and try again >> XXX-SERVER-ONLINE-XXX.txt
 	taskkill /f /im duc30.exe > NUL
 	start /b No-IP\duc30.exe
 	copy /y online.png ..\..\Public\.minecraft-online.png > NUL
 	start /min mapports.cmd
-	start /min "Cerrando Dropbox en 30s" ..\stopdrop.cmd
+	start /min "Stopping Dropbox in 30s" ..\stopdrop.cmd
 	call bukkit.bat
 	taskkill /f /im duc30.exe > NUL
 	call rundropbox.cmd
