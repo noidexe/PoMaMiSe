@@ -1,5 +1,5 @@
 @echo off
-echo Mapeando puertos
+echo Mappig ports
 call java -jar PortMapper.jar -d 25565 TCP
 call java -jar PortMapper.jar -r 25565 TCP
 call java -jar PortMapper.jar -d 25575 TCP
