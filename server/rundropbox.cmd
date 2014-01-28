@@ -1,4 +1,4 @@
 @echo OFF
-echo|set /p=Ejecutando Dropbox............
+echo|set /p=Running Dropbox............
 start /b "dropbox"  "%appdata%\Dropbox\bin\Dropbox.exe"
-echo.HECHO
+echo.DONE
